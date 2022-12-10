@@ -11,7 +11,7 @@ export const CreateProduct = () => {
 
   const navigate = useNavigate();
 
-  const store = async (e) => {
+  const storeProduct = async (e) => {
     e.preventDefault();
     await axios.post(`${API}/product`, { description, price, stock });
     navigate("/");
@@ -20,7 +20,7 @@ export const CreateProduct = () => {
   return (
     <div className="m-3">
       <h3>Create Product</h3>
-      <form onSubmit={store}>
+      <form onSubmit={storeProduct}>
         <div className="mb-3">
           <label className="form-label">Description</label>
           <input
